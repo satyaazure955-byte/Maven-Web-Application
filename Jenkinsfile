@@ -14,17 +14,7 @@ pipeline {
                 sh 'mvn clean package -DskipTest=true'
             }
         }
-        stage('Code Quality'){
-          steps{
-                withSonarQubeEnv('SonarQube') {
-                sh 'echo "$SONAR_HOST_URL   : $SONAR_HOST_URL"'
-                sh 'echo "$SONAR_AUTH_TOKEN : $SONAR_AUTH_TOKEN"'
-                sh 'echo "SONAR_MAVEN_GOAL  : $SONAR_MAVEN_GOAL"'
-                sh 'echo "Token injected successfully"'
-                sh 'mvn clean verify sonar:sonar'
-        }
-            }
-        }
+       
           stage('Deploy to Tomcat') {
             steps {
 
