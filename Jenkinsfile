@@ -11,7 +11,7 @@ pipeline {
         }
         stage('Clean Build'){
             steps{
-                sh 'mvn clean package -DskipTest=true'
+                sh 'mvn clean package'
             }
         }
        
