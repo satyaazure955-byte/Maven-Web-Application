@@ -20,7 +20,7 @@ pipeline {
          post {
 
         success {
-            echo 'Application deployed successfully'
+            echo 'Build Trigger Application deployed successfully'
         }
 
         failure {
